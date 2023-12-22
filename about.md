@@ -5,7 +5,7 @@ permalink: /about
 ---
 # Guixin
 
-## Developer. 
+## Developer
 
 Using Java, Spring Boot
 
