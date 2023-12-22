@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Start Jupyter notebook with Orbstack"
+title: start jupyter notebook with Orbstack
 date: 2023-08-12
 categories: jupyter orbstack
 ---

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "workstation setup"
-date: 2023-12-22 21:30:00 +0900
+title: workstation setup
+date: 2023-12-22
 categories: macos
 ---
 
