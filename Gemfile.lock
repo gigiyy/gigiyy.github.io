@@ -266,7 +266,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll
   webrick
 
 BUNDLED WITH
