@@ -3,7 +3,7 @@ layout: default
 title: "index"
 permalink: index.html
 ---
-Hello World!
+## Hello World!
 
 <ul>
   {% for post in site.posts %}

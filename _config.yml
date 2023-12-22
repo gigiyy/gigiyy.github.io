@@ -1,5 +1,11 @@
-theme: jekyll-theme-modernist
+theme: minima
 
 title: Tackling unnecessary Complexities...
 
 description: System.out.println("Hello World!");
+
+twitter_username: gigiyyjp
+
+author: Guixin
+
+email: guixin.zhu@yahoo.com
