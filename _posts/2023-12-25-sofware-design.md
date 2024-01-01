@@ -25,7 +25,21 @@ the swift method, depends on the flavor, might take from half a week to 3 weeks.
 
 the process I'm going to describe here took longer to complete however in a sense, might also be more practical for the beginners to follow.
 
+### goals and anti gaols
 
+### event storming
+
+### service identification
+
+### boris
+
+### snapE
+
+## backlog maintenance
+
+### thin slices
+
+### backlog and IPM
 
 using swift method, you'll be able to complete first round in roughly 2 to 3 weeks, and start your detailed design in less than 4 weeks.
 
