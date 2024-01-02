@@ -2,7 +2,8 @@
 layout: page
 title: start jupyter notebook with Orbstack
 date: 2023-08-12
-categories: jupyter orbstack
+categories: jupyter
+tags: orbstack
 ---
 
 while I'm working on Edx course on data science, I find the notebook is a good choice for taking courses' notes.

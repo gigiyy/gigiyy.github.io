@@ -2,7 +2,8 @@
 layout: page
 title: software design with swift method and XP/TDD
 date: 2023-12-25
-categories: software-design swift-method XP-TDD
+categories: software design
+tags: swiftMethod XP TDD
 ---
 
 let's see how to implement the software design using swift method and XP.

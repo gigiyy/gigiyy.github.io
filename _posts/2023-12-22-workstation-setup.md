@@ -2,7 +2,7 @@
 layout: page
 title: workstation setup
 date: 2023-12-22
-categories: macos
+categories: macos setup
 ---
 
 memos for setting up my mac workstation
