@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: software design with swift method and XP/TDD
 date: 2023-12-25
 categories: software design

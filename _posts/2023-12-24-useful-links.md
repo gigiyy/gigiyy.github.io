@@ -1,6 +1,6 @@
 ---
-layout: page
-title: useful links
+layout: post
+title: some useful links
 date: 2023-12-24
 categories: links
 ---

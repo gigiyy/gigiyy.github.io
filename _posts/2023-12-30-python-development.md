@@ -1,6 +1,6 @@
 ---
-layout: page
-title: python development setup
+layout: post
+title: python development environment setup
 date: 2023-12-30
 categories: python
 ---

@@ -1,15 +1,4 @@
 ---
-layout: default
-title: "index"
-permalink: index.html
+layout: home
+list_title: Hello World!
 ---
-## Hello World!
-
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
-    </li>
-  {% endfor %}
-</ul>

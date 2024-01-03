@@ -1,9 +1,14 @@
 ---
 layout: page
-title: "about me"
+title: about me
 permalink: /about
 ---
-## Guixin
+
+most of my professional experiences is application support and development.
+
+accidentally become a solution architect in 2019.
+
+still aspired to become a architect.
 
 ### Developer
 
