@@ -36,19 +36,57 @@ especially if it's an enablement engagement which only last for 6 to 12 weeks. u
 event storming is the activity to gather the business events that happens in and (some) around the target system. the activity itself is a much simplified form of Alberto Brandolini's [event storming workshop](https://www.eventstorming.com/).
 
 there are several important points that should be kept in mind:
-- events are those happens in and around the system of business value
+- events are those happens in and around the system that having some business value
 - events should be written in past tense, one sticky for one event
 - events should be arranged one after another in time elapse order from left to right. the events follows could be triggered by previous one, or just should happens next in logical order.
 
 
 below is one of the example that shows how user register itself and optionally add payment method to their account.
-![event storming](/assets/images/event-storming.png)
+![event storming - birds eye view of the system](/assets/images/event-storming.png)
 
 ### service identification
 
+after events has been identified, usually we aim for 60 to 80 percent of the business events inside the system are collected on the board. it's important that we don't looking to collect all events, especially some of the trivial ones, unless you know that there are some pains or performance issue around this part of the system.
+
+to identify the potential service candidates, we'll go through the internal events one by one and consider what business capability should be assigned to make this event possible. 
+
+below are the guidelines while identifying the candidates:
+- business capabilities
+- data ownership
+- loosely coupled
+- testability
+
+when you are in doubt, there are some criteria that can help you think about [whether it should be a microservice](https://tanzu.vmware.com/content/blog/should-that-be-a-microservice-keep-these-six-factors-in-mind). here is excerpts:
+- rate of change
+- scalability(independent)
+- lifecycle management
+- isolated failure
+- simplifying external dependencies
+- freedom of choosing other technology
+
+here is the example of result of the process for above events collected earlier.
+![service identification](/assets/images/service-identification.png)
+
 ### boris
 
+the boris process is the key part of the whole swift method. here we follow the events flows and service candidates we identified in previous steps, try to diagram the relationships between these service candidates utilizing abstracted communication methods (only the property of synchronous or asynchronous is important here). whenever we encounter those communication protocols that out of our control, we usually marked it in different color (black) to put it aside.
+
+here is how you transform from the events to first draft of boris diagram:
+![the beginning of boris](/assets/images/boris-start.png)
+
+when the whole flow finished, the boris looks like this:
+![whole boris - spider web of the service system](/assets/images/boris-full.png)
+
 ### snapE
+
+the snapE step has an odd name, which supposed to stand for "snap not analysis paralysis extended".
+
+during this process, the job is to capture the internal of each important services candidates that we used in our boris diagram. by now, you should've found out that why we keep calling them potential service candidates, as they are changed, combined or split multiples already. 
+
+when most of the diagram is complete, again 60 to 80 percent of the flows we captured during event storming phase, we should be pretty confident that the system (notional) architecture has already took shape and not changing too often even if we kept going further.
+
+then it's time to document the internals of services, you can also do this as you working on boris though, what we want to capture are the APIs, data, high level stories and risks etc. here is are two examples:
+![snapE - profile of the service](/assets/images/snape.png)
 
 ## backlog maintenance
 
