@@ -1,7 +1,6 @@
 ---
 layout: post
 title: start jupyter notebook with Orbstack
-date: 2023-08-12
 categories: jupyter
 tags: orbstack
 ---

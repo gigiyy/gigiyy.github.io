@@ -1,7 +1,6 @@
 ---
 layout: post
 title: workstation setup
-date: 2023-12-22
 categories: macos setup
 ---
 

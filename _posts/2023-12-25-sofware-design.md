@@ -1,7 +1,6 @@
 ---
 layout: post
 title: software design with swift method and XP/TDD
-date: 2023-12-25
 categories: software design
 tags: swiftMethod XP TDD
 ---
@@ -28,7 +27,22 @@ the process I'm going to describe here took longer to complete however in a sens
 
 ### goals and anti gaols
 
+although it seems obvious, however, setting a set of good goals and be clear what would be those not the high priority at least for now is actually quite important for the project team. 
+
+especially if it's an enablement engagement which only last for 6 to 12 weeks. usually we'll emphasis that implement the system in full is not our goal (an anti goal). on the other hand, if we need to focus on the enablement part of the engagement, then we'll further define which aspect is more important for the team. usually the project core members might come up quite divergent objectives, it's necessary to group them into several themes and better prioritize them too.
+
 ### event storming
+
+event storming is the activity to gather the business events that happens in and (some) around the target system. the activity itself is a much simplified form of Alberto Brandolini's [event storming workshop](https://www.eventstorming.com/).
+
+there are several important points that should be kept in mind:
+- events are those happens in and around the system of business value
+- events should be written in past tense, one sticky for one event
+- events should be arranged one after another in time elapse order from left to right. the events follows could be triggered by previous one, or just should happens next in logical order.
+
+
+below is one of the example that shows how user register itself and optionally add payment method to their account.
+![event storming](/assets/images/event-storming.png)
 
 ### service identification
 

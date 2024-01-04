@@ -1,7 +1,6 @@
 ---
 layout: post
 title: install jupyter plugins with docker
-date: 2024-01-03
 categories: jupyter
 ---
 
