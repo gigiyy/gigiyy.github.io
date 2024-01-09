@@ -88,19 +88,27 @@ when most of the diagram is complete, again 60 to 80 percent of the flows we cap
 then it's time to document the internals of services, you can also do this as you working on boris though, what we want to capture are the APIs, data, high level stories and risks etc. here is are two examples:
 ![snapE - profile of the service](/assets/images/snape.png)
 
+the process so far is the first iteration of you swift process. 
+event though it's a demanding process (usually we'll ask the team to join full time for the whole 4 weeks.), but compare to how long the traditional process lasts. the swift method is actually match its name.
+
 ## backlog maintenance
 
+after we've got the first version of our notional architecture, it's time to bring out our developer's gears to starting coding? no, not yet. 
+
 ### thin slices
+the first thing is actually to pick from where you would like to build your system. the part isn't a single service or multiple services, but a slice of system functionality. the slice is usually an end to end flow that represents a user's journey with the system. better if it encompass multiple services. there could be multiple slices that you can choose from. you can choose ont that is most simple or one that touches current system's pai points, and you would like to prove that the new architecture actually can help solve or reduce the pains.
 
 ### backlog and IPM
 
-using swift method, you'll be able to complete first round in roughly 2 to 3 weeks, and start your detailed design in less than 4 weeks.
+now we've decided the content of the first MVP for our new system. product manager will look into the slice, and snapE stories the slice consists of. the PM will start write the user stories, which is out of the scope for this post. when he is ready, the PM will summon the team to do the ritual of pre-IPM or IPM, so the team can look the story and vote for the score of the story. the score could be 0, 1, 2, 3 the fibonacci ones. the score should based on complexity of the story not simply the time needed. 
+
+
+## xp and tdd
+
+
 
 the iteration of parallelism and interleaving of backlog refinement and coding is the central part of software design processes. there'll be needs to re-visit the high level design but certainly it's significancy less so.
 
 specifically, the testing code we can't emphasize enough is also the part of the design too. it's the validation part of design processes.
 
 since all of these are designs, the manufacturing process is actually the CI/CD pipeline we created to help us get rid of this mundane labor, we all don't want to be the assembly line workers.
-
-## xp and tdd
-
