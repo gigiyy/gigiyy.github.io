@@ -5,9 +5,13 @@ categories: software design
 tags: swiftMethod XP TDD
 ---
 
-let's see how to implement the software design using swift method and XP.
+Swift, not the language, is the methodology that can help development team to quickly get started the journey of modernizing their legacy system into a contemporary microservices architecture. the approach works smoothly with the extreme programming and test driven design that's getting popular recently.
 
 ## introduction
+
+> we are doing DDD without mention it to our customer
+>
+> <p style="text-align: center;">--Shaun Anderson</p>
 
 the software design I'm talking about here is related to what Jack W. Reeves talked about in his famous [essays](https://www.developerdotstar.com/mag/articles/reeves_design_main.html)
 
