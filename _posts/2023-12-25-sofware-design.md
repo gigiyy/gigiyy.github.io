@@ -13,7 +13,9 @@ Swift, not the language, is the methodology that can help development team to qu
 >
 > <p style="text-align: center;">--Shaun Anderson</p>
 
-the software design I'm talking about here is related to what Jack W. Reeves talked about in his famous [essays](https://www.developerdotstar.com/mag/articles/reeves_design_main.html)
+regarding software design, there were heated discussions about what is and is not design in software development process. I would recommend you to read what Jack W. Reeves his famous [essays](https://www.developerdotstar.com/mag/articles/reeves_design_main.html) on this topic.
+
+While conventional thinking often associates design solely with architects or senior developers, various team meq   mbers contribute to the design process in distinct ways. For example, when a product manager prioritizes which features to develop first, envisioning the initial business value for end-users, it's a form of software design. Similarly, when a designer crafts intricate interaction blueprint for the system or a developer meticulously writes unit tests while envisioning system behavior in different scenarios, they are all actively participating in software design, albeit focusing on only a small part of it.
 
 I'm going to call the notional architecture design process (swift method) as high level design, whereas choosing thin slices and backlog maintenance as mid-level design. The coding part, executed in Red-Green-Refactor cycle manner are the detailed design. 
 
