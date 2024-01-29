@@ -8,6 +8,10 @@ tags: swiftMethod XP TDD
 
 Swift method is the methodology pivotal for development teams embarking on the journey of modernizing their legacy systems into contemporary microservices architectures. This approach seamlessly integrates with Extreme Programming (XP) and Test-Driven Design (TDD), methodologies gaining recent popularity.
 
+
+> _ChatGPT was used extensively to help rewrite the content, except this line ^\_^_
+
+
 ## Introduction
 
 > "we are doing DDD without mention it to our customer."
