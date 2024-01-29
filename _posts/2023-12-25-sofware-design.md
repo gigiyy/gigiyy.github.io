@@ -1,120 +1,128 @@
 ---
 layout: post
-title: software design with swift method and XP/TDD
+title: Swift Method - Revolutionizing Legacy Modernization
 categories: software design
+date: 2024-01-29
 tags: swiftMethod XP TDD
 ---
 
-Swift, not the language, is the methodology that can help development team to quickly get started the journey of modernizing their legacy system into a contemporary microservices architecture. the approach works smoothly with the extreme programming and test driven design that's getting popular recently.
+Swift method is the methodology pivotal for development teams embarking on the journey of modernizing their legacy systems into contemporary microservices architectures. This approach seamlessly integrates with Extreme Programming (XP) and Test-Driven Design (TDD), methodologies gaining recent popularity.
 
-## introduction
+## Introduction
 
-> we are doing DDD without mention it to our customer
+> "we are doing DDD without mention it to our customer."
 >
 > <p style="text-align: center;">--Shaun Anderson</p>
 
-regarding software design, there were heated discussions about what is and is not design in software development process. I would recommend you to read what Jack W. Reeves his famous [essays](https://www.developerdotstar.com/mag/articles/reeves_design_main.html) on this topic.
+In the realm of software design, debates have surged over delineating what constitutes design within the software development process. It is highly recommended to delve into the seminal essays by Jack W. Reeves on this subject [here](https://www.developerdotstar.com/mag/articles/reeves_design_main.html).
 
-While conventional thinking often associates design solely with architects or senior developers, various team meq   mbers contribute to the design process in distinct ways. For example, when a product manager prioritizes which features to develop first, envisioning the initial business value for end-users, it's a form of software design. Similarly, when a designer crafts intricate interaction blueprint for the system or a developer meticulously writes unit tests while envisioning system behavior in different scenarios, they are all actively participating in software design, albeit focusing on only a small part of it.
+While traditional notions confine design to architects or senior developers, diverse team members contribute to the design process in unique ways. For instance, when a product manager prioritizes feature development, envisioning initial business value for end-users, it embodies a form of software design. Similarly, a designer crafting intricate interaction blueprints or a developer meticulously scripting unit tests while envisaging system behavior in varied scenarios, actively participates in software design, albeit focusing on distinct facets.
 
-I'm going to call the notional architecture design process (swift method) as high level design, whereas choosing thin slices and backlog maintenance as mid-level design. The coding part, executed in Red-Green-Refactor cycle manner are the detailed design. 
+I categorize the notional architecture design process (Swift Method) as high-level design, while selecting thin slices and maintaining backlogs as mid-level design. The coding phase, executed in a Red-Green-Refactor cycle, constitutes detailed design.
 
-the processes that follows, like setting up CI/CD pipeline etc. are part of the building process but not part of design.
+Subsequent processes, such as setting up CI/CD pipelines, form part of the building process but lie outside the realm of design.
 
-Swift method was invented by Shaun Anderson, former pivots. you can find the [introduction](https://www.swiftbird.us/the-swift-method) from his own site. also a [talk](https://youtu.be/7-fRtd8LUwA?si=06U1JYT-34fYJKOC) at Explore DDD conference is available.
+The Swift Method, conceptualized by Shaun Anderson, former Pivot, is extensively detailed on his personal site [here](https://www.swiftbird.us/the-swift-method). Additionally, a talk presented at the Explore DDD conference is accessible [here](https://youtu.be/7-fRtd8LUwA?si=06U1JYT-34fYJKOC).
 
-for XP and TDD, there are more resources like [its own site](http://www.extremeprogramming.org/) and the [book](https://a.co/d/6RMzF9I) by the inventor Kent Beck.
+For XP and TDD, abundant resources exist, including dedicated sites [like this](http://www.extremeprogramming.org/) and the foundational book by Kent Beck, available [here](https://a.co/d/6RMzF9I).
 
-## swift method
+## Swift Method
 
-the swift method, depends on the flavor, might take from half a week to 3 weeks.
+The Swift Method, depending on its flavor, may take anywhere from half a week to 3 weeks.
 
-the process I'm going to describe here took longer to complete however in a sense, might also be more practical for the beginners to follow.
-
-### goals and anti gaols
-
-although it seems obvious, however, setting a set of good goals and be clear what would be those not the high priority at least for now is actually quite important for the project team. 
-
-especially if it's an enablement engagement which only last for 6 to 12 weeks. usually we'll emphasis that implement the system in full is not our goal (an anti goal). on the other hand, if we need to focus on the enablement part of the engagement, then we'll further define which aspect is more important for the team. usually the project core members might come up quite divergent objectives, it's necessary to group them into several themes and better prioritize them too.
-
-### event storming
-
-event storming is the activity to gather the business events that happens in and (some) around the target system. the activity itself is a much simplified form of Alberto Brandolini's [event storming workshop](https://www.eventstorming.com/).
-
-there are several important points that should be kept in mind:
-- events are those happens in and around the system that having some business value
-- events should be written in past tense, one sticky for one event
-- events should be arranged one after another in time elapse order from left to right. the events follows could be triggered by previous one, or just should happens next in logical order.
+The process I'll outline here took longer to complete; however, it might be more practical for beginners to follow.
 
 
-below is one of the example that shows how user register itself and optionally add payment method to their account.
-![event storming - birds eye view of the system](/assets/images/event-storming.png)
+### Goals and Anti-Goals
 
-### service identification
+Although seemingly obvious, setting clear, prioritized goals and delineating what isn't a high priority, at least for the present, holds paramount importance for the project team.
 
-after events has been identified, usually we aim for 60 to 80 percent of the business events inside the system are collected on the board. it's important that we don't looking to collect all events, especially some of the trivial ones, unless you know that there are some pains or performance issue around this part of the system.
+Especially in enablement engagements lasting only 6 to 12 weeks, it's crucial to emphasize that implementing the system in its entirety isn't our primary goal (an anti-goal). Conversely, if focusing on the enablement aspect, we further define which aspects matter most for the team. Typically, project core members might present divergent objectives, necessitating grouping them into several themes and prioritizing them accordingly.
 
-to identify the potential service candidates, we'll go through the internal events one by one and consider what business capability should be assigned to make this event possible. 
+### Event Storming
 
-below are the guidelines while identifying the candidates:
-- business capabilities
-- data ownership
-- loosely coupled
-- testability
+Event storming entails gathering the business events occurring in and around the target system. This activity, a simplified version of Alberto Brandolini's [event storming workshop](https://www.eventstorming.com/), embodies several important points:
 
-when you are in doubt, there are some criteria that can help you think about [whether it should be a microservice](https://tanzu.vmware.com/content/blog/should-that-be-a-microservice-keep-these-six-factors-in-mind). here is excerpts:
-- rate of change
-- scalability(independent)
-- lifecycle management
-- isolated failure
-- simplifying external dependencies
-- freedom of choosing other technology
+- Events are occurrences within and around the system with business value.
+- Events are written in the past tense, one sticky note per event.
+- Events are arranged in chronological order from left to right, following logical time progression.
 
-here is the example of result of the process for above events collected earlier.
-![service identification](/assets/images/service-identification.png)
+Below is an example illustrating how a user registers and optionally adds a payment method to their account.
+![Event Storming - Bird's Eye View of the System](/assets/images/event-storming.png)
 
-### boris
+### Service Identification
 
-the boris process is the key part of the whole swift method. here we follow the events flows and service candidates we identified in previous steps, try to diagram the relationships between these service candidates utilizing abstracted communication methods (only the property of synchronous or asynchronous is important here). whenever we encounter those communication protocols that out of our control, we usually marked it in different color (black) to put it aside.
+After identifying events, our aim is usually to collect 60 to 80 percent of the business events within the system on the board. It's vital not to aim for all events, particularly trivial ones, unless there are issues or performance concerns in that part of the system.
 
-here is how you transform from the events to first draft of boris diagram:
-![the beginning of boris](/assets/images/boris-start.png)
+To identify potential service candidates, we evaluate internal events individually, considering the business capability necessary to enable each event. Guidelines for identifying candidates include:
 
-when the whole flow finished, the boris looks like this:
-![whole boris - spider web of the service system](/assets/images/boris-full.png)
+- Business capabilities
+- Data ownership
+- Loosely coupled
+- Testability
 
-### snapE
+When in doubt, specific criteria help determine [whether it should be a microservice](https://tanzu.vmware.com/content/blog/should-that-be-a-microservice-keep-these-six-factors-in-mind). Excerpts ine below:
 
-the snapE step has an odd name, which supposed to stand for "snap not analysis paralysis extended".
+- Rate of change
+- Scalability (independently)
+- Lifecycle management
+- Isolated failure
+- Simplifying external dependencies
+- Freedom of choosing other technology
 
-during this process, the job is to capture the internal of each important services candidates that we used in our boris diagram. by now, you should've found out that why we keep calling them potential service candidates, as they are changed, combined or split multiples already. 
+Here's an example of the service identification results for the events collected earlier.
+![Service Identification](/assets/images/service-identification.png)
 
-when most of the diagram is complete, again 60 to 80 percent of the flows we captured during event storming phase, we should be pretty confident that the system (notional) architecture has already took shape and not changing too often even if we kept going further.
+### Boris
 
-then it's time to document the internals of services, you can also do this as you working on boris though, what we want to capture are the APIs, data, high level stories and risks etc. here is are two examples:
-![snapE - profile of the service](/assets/images/snape.png)
+The Boris process is pivotal in the Swift Method. Here, we map relationships between service candidates based on those event flows identified in previous steps, utilizing abstracted communication methods (synchronous or asynchronous). Communication protocols beyond our control are usually marked in black and set aside.
 
-the process so far is the first iteration of you swift process. 
-event though it's a demanding process (usually we'll ask the team to join full time for the whole 4 weeks.), but compare to how long the traditional process lasts. the swift method is actually match its name.
+Here's how you transform events into the first draft of a Boris diagram.
+![The Beginning of Boris](/assets/images/boris-start.png)
+When completed, the Boris resembles a spider web of the service system.
+![Whole Boris - Spider Web of the Service System](/assets/images/boris-full.png)
 
-## backlog maintenance
+### SnapE
 
-after we've got the first version of our notional architecture, it's time to bring out our developer's gears to starting coding? no, not yet. 
+The SnapE step, with its odd name standing for "snap not analysis paralysis extended," entails capturing the internals of each important service candidate used in our Boris diagram. By now, you should understand why we refer to them as potential service candidates, as they may change, combine, or split multiple times.
 
-### thin slices
-the first thing is actually to pick from where you would like to build your system. the part isn't a single service or multiple services, but a slice of system functionality. the slice is usually an end to end flow that represents a user's journey with the system. better if it encompass multiple services. there could be multiple slices that you can choose from. you can choose ont that is most simple or one that touches current system's pai points, and you would like to prove that the new architecture actually can help solve or reduce the pains.
+When most of the diagram is complete, capturing 60 to 80 percent of the flows during the event storming phase, we gain confidence that the system (notional) architecture has taken shape and won't change significantly.
 
-### backlog and IPM
+It's then time to document the internals of services, capturing APIs, data, high-level stories, and risks. Here are two examples.
+![SnapE - Profile of the Service](/assets/images/snape.png)
 
-now we've decided the content of the first MVP for our new system. product manager will look into the slice, and snapE stories the slice consists of. the PM will start write the user stories, which is out of the scope for this post. when he is ready, the PM will summon the team to do the ritual of pre-IPM or IPM, so the team can look the story and vote for the score of the story. the score could be 0, 1, 2, 3 the fibonacci ones. the score should based on complexity of the story not simply the time needed. 
-
-
-## xp and tdd
+Thus far, this constitutes the first iteration of your Swift process. Though demanding (typically requiring full-time team involvement for the entire 4 weeks), compared to the traditional process, the Swift Method aptly matches its name.
 
 
+## Backlog Maintenance
 
-the iteration of parallelism and interleaving of backlog refinement and coding is the central part of software design processes. there'll be needs to re-visit the high level design but certainly it's significancy less so.
+Once we've established the initial version of our notional architecture, is it time to don our developer hats and start coding? Not quite yet.
 
-specifically, the testing code we can't emphasize enough is also the part of the design too. it's the validation part of design processes.
+### Thin Slices
 
-since all of these are designs, the manufacturing process is actually the CI/CD pipeline we created to help us get rid of this mundane labor, we all don't want to be the assembly line workers.
+The foremost task is to select where to commence building our system. This segment isn't a single service or multiple services but rather a slice of system functionality. The slice typically represents an end-to-end flow embodying a user's interaction with the system. It's preferable if it spans multiple services. There may be multiple slices to choose from. Opt for one that is simplest or one that addresses current pain points in the system, aiming to demonstrate how the new architecture can alleviate or mitigate these pains.
+
+### Backlog and IPM
+
+Now that we've determined the content of the first Minimum Viable Product (MVP) for our new system, the product manager scrutinizes the slice and delineates the stories it comprises. The PM begins crafting user stories, a topic beyond the scope of this post. When ready, the PM convenes the team for the pre-IPM or IPM ritual, enabling the team to review the stories and assign a score. The score, using Fibonacci numbers such as 0, 1, 2, or 3, should reflect the complexity of the story rather than simply the time required.
+
+
+## XP and TDD
+
+Given the abundance of available materials, I'll forego delving into most details in this section.
+
+However, one critical aspect the team should contemplate is the true essence of a unit test.
+
+The original meaning of a unit test, contrary to common belief, pertains to a test that can run independently. It's unrelated to the scope or target it tests against, as commonly understood nowadays.
+
+This raises another question: Consider a scenario where, during initial development, your unit test covers the behavior of accepting REST requests from users and inserting that data from request parameters into the database using the repository, which was a direct dependency of the controller class.
+
+Later, you refactor out the repository dependency and transfer it to your service class. Should you refactor this unit test to align with the changes in your production code?
+
+## Final Words
+
+The aforementioned processes don't follow a linear trajectory from architecture design, development, to deployment. Instead, they represent an iteration of parallelism and interleaving of backlog refinement and coding processes. This constitutes the crux of software design processes. While high-level design revisitation is common, its significance diminishes.
+
+Specifically, testing code, which cannot be emphasized enough, also constitutes part of the design. It's the validation aspect of design processes.
+
+Given that all these are designs, the actual manufacturing process is the CI/CD pipeline we've established to alleviate us from mundane labor, sparing us from being mere assembly line workers.
