@@ -99,9 +99,9 @@ The activities thus far constitutes the first iteration of your Swift process. T
 
 ### Regarding the potential service candidates
 
-Since we've got all the service candidates, the team usually would like to think that each of these candidates we identified would eventually become those microservices in our system. However this assumption or decision is still too early to make at this stage. We should always be cautious enough not to dive into implementation detail too soon. Premature optimization or solutioning is the top evil in software design. 
+Now that we've identified all the service candidates, the team often assumes that each of these candidates will eventually evolve into microservices within the system. However, it's premature to make such assumptions or decisions at this stage. It's crucial to refrain from delving into implementation details too early, as premature optimization or solutioning can be detrimental to software design.
 
-As microservice's definition goes, it's an independent deployable unit of your system. this unit could be one of the service candidates we identified, however it also can be multiple of them. there is nothing to prevent you to use techniques like modulith etc. to deploy your applications. Unless you've been very sure from past experiences, no need to make decisions like how to deploy the service at all at this stage.
+As per the definition of microservices, they are independent deployable units of the system. While some of the service candidates we identified could indeed become a microservice, it's also possible for multiple candidates to be combined into one. Techniques like modulith allow for flexible application deployment. Unless we have clear insights from past experiences, there's no need to make decisions about how to deploy the service at this early stage.
 
 
 ## Backlog Maintenance
