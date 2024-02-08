@@ -97,6 +97,12 @@ It's then time to document the internals of services, capturing APIs, data, high
 
 The activities thus far constitutes the first iteration of your Swift process. Though demanding (typically requiring full-time team involvement for the entire 3 weeks), compared to the traditional process, the Swift Method aptly matches its name.
 
+### Regarding the potential service candidates
+
+Since we've got all the service candidates, the team usually would like to think that each of these candidates we identified would eventually become those microservices in our system. However this assumption or decision is still too early to make at this stage. We should always be cautious enough not to dive into implementation detail too soon. Premature optimization or solutioning is the top evil in software design. 
+
+As microservice's definition goes, it's an independent deployable unit of your system. this unit could be one of the service candidates we identified, however it also can be multiple of them. there is nothing to prevent you to use techniques like modulith etc. to deploy your applications. Unless you've been very sure from past experiences, no need to make decisions like how to deploy the service at all at this stage.
+
 
 ## Backlog Maintenance
 
