@@ -6,10 +6,10 @@ date: 2024-01-29
 tags: swiftMethod XP TDD
 ---
 
-Swift method is the methodology pivotal for development teams embarking on the journey of modernizing their legacy systems into contemporary microservices architectures. The approach also seamlessly integrates with Extreme Programming and Test-Driven Design, methodologies that's gaining recent popularity.
+The Swift method is a methodology designed to assist development teams in embarking on the journey of modernizing their legacy systems, often of significant scale, into contemporary microservices architectures. This approach seamlessly integrates with Lean and XP frameworks, facilitating teams in designing the right software and design it right.
 
 
-> _Disclaimer: ChatGPT was used extensively, except this line ^\_^, to help improve the writing (not generating the whole content), the idea was mine_
+> _Disclaimer: ChatGPT was used extensively, except this line ^\_^, to help improve the writing (especially regarding the conciseness of the post, however not generating the content itself), the idea was mine_
 
 
 ## Introduction
@@ -18,15 +18,19 @@ Swift method is the methodology pivotal for development teams embarking on the j
 >
 > <p style="text-align: center;">--Shaun Anderson</p>
 
-In the realm of software design, debates have surged over what constitutes design within the software development process. It is highly recommended to delve into the seminal essays by Jack W. Reeves on this subject [here](https://www.developerdotstar.com/mag/articles/reeves_design_main.html).
+The Swift Method, conceptualized by Shaun Anderson, a former Pivot, is extensively detailed on his personal site [here](https://www.swiftbird.us/the-swift-method). Additionally, a talk presented at the Explore DDD conference is also accessible [here](https://youtu.be/7-fRtd8LUwA?si=06U1JYT-34fYJKOC).
+
+During the Pivotal Labs days, it was part of the application navigator service, along with other processes and concepts like Lean, XP, and balanced teams, that helped the customer's developer team quickly embark on the legacy modernization journey.
+
+Though not publicly advocated, our experiences have shown its potential surpasses its original purpose of modernizing legacy systems. The method can aid software design in general, particularly when incorporating Lean and TDD principles.
+
+When it comes to software design, ongoing debates persist regarding its true definition within the software development process. It's highly recommended to explore the seminal essays by Jack W. Reeves on this subject, available [here](https://www.developerdotstar.com/mag/articles/reeves_design_main.html).
 
 While traditional notions confine design to architects or senior developers, diverse team members contribute to the design process in unique ways. For instance, when a product manager prioritizes feature development, envisioning initial business value for end-users, it embodies a form of software design. Similarly, a designer crafting intricate interaction blueprints or a developer meticulously scripting unit tests while envisaging system behavior in varied scenarios, actively participates in software design, albeit focusing on distinct facets.
 
 I would like to categorize the notional architecture design process (Swift Method) as high-level design, while selecting thin slices and maintaining backlogs as mid-level one. The coding phase, executed in a Red-Green-Refactor cycle, is the detailed version of it.
 
 Subsequent processes, such as setting up CI/CD pipelines, form part of the building process but lie outside the realm of design.
-
-The Swift Method, conceptualized by Shaun Anderson, a former Pivot, is extensively detailed on his personal site [here](https://www.swiftbird.us/the-swift-method). Additionally, a talk presented at the Explore DDD conference is also accessible [here](https://youtu.be/7-fRtd8LUwA?si=06U1JYT-34fYJKOC).
 
 For XP and TDD, abundant resources exist, including dedicated sites [like this](http://www.extremeprogramming.org/) and the foundational book by Kent Beck, available [here](https://a.co/d/6RMzF9I).
 
