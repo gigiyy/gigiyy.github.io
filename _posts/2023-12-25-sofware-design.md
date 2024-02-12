@@ -103,7 +103,7 @@ The activities thus far constitutes the first iteration of your Swift process. T
 
 ### Regarding the potential service candidates
 
-Now that we've identified all the service candidates, the team often assumes that each of these candidates will eventually evolve into microservices within the system. However, it's premature to make such assumptions or decisions at this stage. It's crucial to refrain from delving into implementation details too early, as premature optimization or solutioning can be detrimental to software design.
+Now that we've identified all the service candidates, the team often assumes that each of these candidates will eventually evolve into microservices within the system. However, it's premature to make such assumptions or decisions at this stage. It's crucial to refrain from delving into implementation details too early, as [premature optimization or solutioning is the root of all evil](https://m.xkcd.com/1691/).
 
 As per the definition of microservices, they are independent deployable units of the system. While some of the service candidates we identified could indeed become a microservice, it's also possible for multiple candidates to be combined into one. Techniques like modulith allow for flexible application deployment. Unless we have clear insights from past experiences, there's no need to make decisions about how to deploy the service at this early stage.
 
@@ -115,6 +115,8 @@ Once we've established the initial version of our notional architecture, is it t
 ### Thin Slices
 
 The foremost task is to select where to commence building our system. This segment isn't a single service or multiple services but rather a slice of system functionality. The slice typically represents an end-to-end flow embodying a user's interaction with the system. It's preferable if it cut through multiple services. There may be multiple slices to choose from. Opt for one that is simplest or one that addresses current pain points in the system, aiming to demonstrate how the new architecture can alleviate or mitigate these pains.
+
+Even if you're totally confident that the notional architecture you have now would solve all the issues, you should still start building the new system incrementally. The slices you're working on, call it MVP or strangler fig, should offer tangible business value, which at times outweighs solving complex technical problems.
 
 ### Backlog and IPM
 
