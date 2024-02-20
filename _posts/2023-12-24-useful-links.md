@@ -30,5 +30,7 @@ it's a talk by Rich Hickey, who is Clojure author. this talk definitely make you
 
 Bryan Cantrill is one of his own kind. just need to remember our internet civilization lives on steal plates.
 
+- [leaky abstractions by Joel Spolsky](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/)
 
+> So the abstractions save us time working, but they don’t save us time learning.
 
