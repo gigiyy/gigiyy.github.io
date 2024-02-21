@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What a developer wants?
+title: what a developer wants?
 categories: software design
 ---
 

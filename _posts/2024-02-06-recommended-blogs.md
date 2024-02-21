@@ -1,6 +1,6 @@
 ---
 layout: post
-title: recommended readings
+title: recommended blogs
 categories: reading
 ---
 

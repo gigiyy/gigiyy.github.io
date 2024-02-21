@@ -1,6 +1,6 @@
 ---
 layout: post
-title: some useful links
+title: recommended readings
 categories: reading
 ---
 

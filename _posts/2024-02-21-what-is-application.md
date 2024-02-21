@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What is application, anyway
+title: what is application, anyway
 categories: software design
 ---
 
