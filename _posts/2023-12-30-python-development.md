@@ -1,7 +1,7 @@
 ---
 layout: post
 title: python development environment setup
-categories: python
+categories: dev python
 ---
 
 the trick is to use `pyenv` and `venv` at the same time.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: some useful links
-categories: links
+categories: reading
 ---
 
 some useful links that I visit frequently

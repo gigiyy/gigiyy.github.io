@@ -1,7 +1,7 @@
 ---
 layout: post
 title: workstation setup
-categories: macos setup
+categories: dev setup
 ---
 
 memos for setting up my mac workstation

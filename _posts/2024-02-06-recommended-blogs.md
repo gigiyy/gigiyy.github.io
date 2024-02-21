@@ -1,7 +1,7 @@
 ---
 layout: post
 title: recommended readings
-categories: links
+categories: reading
 ---
 
 - [laixintao's blog](https://www.kawabangga.com/)

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: install jupyter plugins with docker
-categories: jupyter
+categories: dev jupyter
 ---
 
 first, install the needed plugin using jupyter UI when it's running in docker.

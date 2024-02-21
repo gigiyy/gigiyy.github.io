@@ -1,7 +1,7 @@
 ---
 layout: post
 title: start jupyter notebook with Orbstack
-categories: jupyter
+categories: dev jupyter
 tags: orbstack
 ---
 
