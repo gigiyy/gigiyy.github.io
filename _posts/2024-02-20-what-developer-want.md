@@ -22,7 +22,7 @@ As Developer, I would love the developer platform that can minimize the overhead
 
 It may seem like a surprisingly short list, especially for developers who typically crave more memory, powerful CPUs, or GPUs.
 
-But what if I told you that when we refer to "developers" here, we're not just talking about the coders on your team? We're also referring to those who support the programmers. No, I'm not referring to HR, Sales, DBAs who critique your SQL queries, or platform operators who handle server restarts.
+But what if I told you that the "developers" here is not just the coders on your team? It also referring to those who support the programmers. No, I'm not referring to HR, Sales, DBAs who critique your SQL queries, or platform operators who handle server restarts.
 
 In this context, "developers" encompass the entire team collaborating to deliver the software product. This includes the product manager who knows what business wants, designer who knows what end user wants and of course,  programmer who knows how to make it work.
 
