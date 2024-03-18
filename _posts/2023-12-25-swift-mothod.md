@@ -6,23 +6,23 @@ date: 2024-01-29
 tags: swiftMethod XP TDD
 ---
 
-The Swift method is a methodology designed to assist development teams in embarking on the journey of modernizing their legacy systems, often of significant scale, into contemporary microservices architectures. This approach seamlessly integrates with Lean and XP frameworks, facilitating teams in designing the right software and design it right.
+The Swift method is a methodology designed to assist development teams in embarking on the journey of modernizing their legacy systems, often of significant scale, into contemporary microservices architectures. This approach works well with Lean and XP frameworks, facilitating teams in designing the right software and design it right.
 
 
-> _Disclaimer: ChatGPT was used extensively, except this line ^\_^, to help improve the writing (especially regarding the conciseness of the post, however not generating the content itself), the idea was mine_
+> _Disclaimer: ChatGPT was used extensively, except this line ^\_^, to help improve the writing (especially helping removing the clutters, but not generating the content)_
 
 
 ## Introduction
 
-> "we are doing DDD without mention it to our customer."
+> "we are doing DDD without mention it to our customers."
 >
 > <p style="text-align: center;">--Shaun Anderson</p>
 
-The Swift Method, conceptualized by Shaun Anderson, a former Pivot, is extensively detailed on his personal site [here](https://www.swiftbird.us/the-swift-method). Additionally, a talk presented at the Explore DDD conference is also accessible [here](https://youtu.be/7-fRtd8LUwA?si=06U1JYT-34fYJKOC).
+The Swift Method, conceptualized by Shaun Anderson, a former Pivot, is detailed on his [personal site](https://www.swiftbird.us/the-swift-method). Additionally, a talk presented at the Explore DDD conference is also available [here](https://youtu.be/7-fRtd8LUwA?si=06U1JYT-34fYJKOC).
 
 During the Pivotal Labs days, it was part of the application navigator service, along with other processes and concepts like Lean, XP, and balanced teams, that helped the customer's developer team quickly embark on the legacy modernization journey.
 
-Though not publicly advocated, our experiences have shown its potential surpasses its original purpose of modernizing legacy systems. The method can aid software design in general, particularly when incorporating Lean and TDD principles.
+Though not publicly advocated, our experiences have shown it has broader potential in software design in general, particularly when incorporating Lean and TDD principles.
 
 When it comes to software design, ongoing debates persist regarding its true definition within the software development process. It's highly recommended to explore the seminal essays by Jack W. Reeves on this subject, available [here](https://www.developerdotstar.com/mag/articles/reeves_design_main.html).
 
@@ -36,7 +36,7 @@ For XP and TDD, abundant resources exist, including dedicated sites [like this](
 
 ## Swift Method
 
-The Swift Method, depending on its flavor, may take anywhere from half a week to 3 weeks. The process I'll outline here would take longer to complete; however, it should be more practical for beginners to follow.
+The Swift Method, depending on its flavor, may take anywhere from half a week to 3 weeks. The process I'll outline here would take longer to complete; however, it should be easier to follow along for the beginners.
 
 
 ### Goals and Anti-Goals
@@ -47,13 +47,13 @@ Especially in enablement engagements setting, which lasts only 6 to 12 weeks, it
 
 ### Event Storming
 
-Event storming entails gathering the business events occurring in and around the target system. This activity, a simplified version of Alberto Brandolini's [event storming workshop](https://www.eventstorming.com/), embodies several important points:
+Event storming entails gathering the business events occurring in and around the target system. This activity is a much simplified version of Alberto Brandolini's [event storming workshop](https://www.eventstorming.com/). The facilitators should keep below in mind:
 
 - Events are occurrences within and around the system with business value.
 - Events are written in the past tense, one sticky note per event.
 - Events are arranged in chronological order from left to right, following logical time progression.
 
-Below is an example illustrating how a user registers and optionally adds a payment method to their account.
+Below is an example event storming board illustrating how a user registers and optionally adds a payment method to their account.
 ![Event Storming - Bird's Eye View of the System](/assets/images/event-storming.png)
 
 ### Service Identification
@@ -69,7 +69,7 @@ To identify potential service candidates, we'll evaluate internal and only the i
 - Loosely coupled
 - Testability
 
-When in doubt, specific criteria help determine [whether it should be a microservice](https://tanzu.vmware.com/content/blog/should-that-be-a-microservice-keep-these-six-factors-in-mind). Excerpts listed below:
+When in doubt, specific criteria help determine [whether it should be a microservice](https://tanzu.vmware.com/content/blog/should-that-be-a-microservice-keep-these-six-factors-in-mind). The excerpts from the blog posts is listed below:
 
 - Rate of change
 - Scalability (independently)
@@ -83,12 +83,14 @@ Here's an example of the service identification results for the events collected
 
 ### Boris
 
-The Boris process is pivotal in the Swift Method. Here, we map relationships between service candidates based on those event flows identified in previous steps, utilizing abstracted communication methods (synchronous or asynchronous). Communication protocols beyond our control are usually marked in black and set aside.
+The Boris process is pivotal in the Swift Method. Here, we map relationships between service candidates following those event flows identified in previous steps, utilizing abstracted communication methods (synchronous or asynchronous). Communication protocols beyond our control are usually marked in black and set aside.
 
-Here's how you transform events into the first draft of a Boris diagram.
+Here's how you transform events into the first draft of a Boris diagram, based on the first two internal events.
 ![The Beginning of Boris](/assets/images/boris-start.png)
 When completed the selected flow, the Boris starts resembling a spider web of the services and external systems.
 ![Whole Boris - Spider Web of the Service System](/assets/images/boris-full.png)
+
+When crafting the Boris diagram, team discussions are encouraged to determine how events should be mapped onto the diagram. This often involves iterative back-and-forth between the event storming board and the Boris diagram. Additionally, services may undergo renaming, splitting, or merging as part of this process. It's typical to make adjustments such as adding missing events or updating for enhanced conciseness and clarity to the event storming board too.
 
 ### SnapE
 
@@ -135,12 +137,8 @@ This raises another question: Consider a scenario where, during initial developm
 
 Later, you refactor out the repository dependency and transfer it to your service class. Should you refactor this unit test to align with the changes in your production code?
 
+While I prefer not to refactor the test cases now. I don't have a clear answer to this questions myself.
+
 ## Final Words
 
-The aforementioned processes don't follow a linear trajectory from architecture design, development, to deployment. Instead, they represent an iteration of the interleaving, even back-tracking of backlog refinement and coding activities. This constitutes the crux of software design processes. While high-level design revisitation certainly less frequent.
-
-Specifically, the testing code, which cannot be emphasized enough, also constitutes part of the software design. It's the validation aspect of design processes.
-
-Given that all these are designs, the actual manufacturing process is the CI/CD pipeline we've established to alleviate us from mundane labor, sparing us from being mere assembly line workers.
-
-Maybe we should call ourself designer too.
+The aforementioned processes don't follow a linear trajectory from architecture design, development, to deployment. Instead, they represent an iteration of the interleaving, even back-tracking of backlog refinement and coding activities. This constitutes the crux of software design processes. While revisiting high-level design is certainly less frequent, you'll inevitably find the need to make architectural changes from time to time.
